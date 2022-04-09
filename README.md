@@ -9,6 +9,7 @@ This will be a short demonstration of the code I use for converting Natural Eart
 
 ## 1.	Convert discrete and simple geographic features (e.g. rivers, roads, coastlines, boundaries, lakes) into GMT format vectors with GDAL
 ![Alt text](Figures/rivers_boundaries.png)
+
 Assumed that we have downloaded a SQLite package from the Natural earth data [download page](https://www.naturalearthdata.com/downloads/ ), we can view the data info by typing: 
 ```
 ogrinfo packages/natural_earth_vector.sqlite 
