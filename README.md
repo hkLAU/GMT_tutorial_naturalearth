@@ -7,7 +7,7 @@ This will be a short demonstration of the code I use for converting Natural Eart
 
 [GDAL](https://gdal.org) is a translator library for raster and vector geospatial data. [GRASS GIS](https://grass.osgeo.org) is a free and open source software for geographic resources analysis. Documentation and installation guide can be found in [the GRASS Wiki page](https://grasswiki.osgeo.org/wiki/GRASS-Wiki). 
 
-######1. 1.	Convert discrete and simple geographic features (e.g. rivers, roads, coastlines, boundaries, lakes) into GMT format vectors with GDAL
+## 1.	Convert discrete and simple geographic features (e.g. rivers, roads, coastlines, boundaries, lakes) into GMT format vectors with GDAL
 
 Assumed that we have downloaded a SQLite package from the Natural earth data [download page](https://www.naturalearthdata.com/downloads/ ), we can view the data info by typing: 
 ```
@@ -19,7 +19,7 @@ ogr2ogr -f OGR_GMT ne_110m_rivers_lake_centerlines.gmt packages/natural_earth_ve
 ```
 Where OGR_GMT is the desire format, ne_110m_rivers_lake_centerlines.gmt is the outfile name, packages/natural_earth_vector.sqlite is the infile name and ne_110m_rivers_lake_centerlines is the  layer name. 
 
-######2. 2.	Convert continues and complex geographic features (e.g. ice sheets, ocean) into GMT format vectors with GRASS GIS
+## 2.	Convert continues and complex geographic features (e.g. ice sheets, ocean) into GMT format vectors with GRASS GIS
 
 Open GRASS GIS with the command grass78. 
 ```
