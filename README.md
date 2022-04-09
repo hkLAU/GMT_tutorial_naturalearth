@@ -33,8 +33,22 @@ Set region of interest. You can view region info with *g.region -p*.
 ```
 g.region e=180e w=180w n=90n s=90s
 ```
-Creates a vector map of a user-defined grid. We wuold like to create a 6x12 grid (30 arc-min resulotion) and name it grid30m. 
+Creates a vector map of a user-defined grid. We would like to create a 6x12 grid (30 arc-min or 0.5 degree resulotion) and name it *grid30min*. For details of making grid, see [manual](https://grass.osgeo.org/grass80/manuals/v.mkgrid.html). 
 ```
-v.mkgrid map=grid30m grid=6,12
+v.mkgrid map=grid30min grid=6,12
 ```
+View the vector map you have just made. 
+```
+g.list type=vect
+```
+Overlays two vector maps and clip the ocean ploygon within the 30 arc-min grid vector with the ***and*** operator. 
+```
+v.overlay ainput=ne_50m_ocean binput=grid30deg operator=and output=ne_50m_ocean_blocks
+```
+Export the output vector in GMT format. 
+```
+v.out.ogr input=ne_50m_ocean_blocks output=ne_50m_ocean_blocks.gmt format=OGR_GMT
+```
+
+
 
