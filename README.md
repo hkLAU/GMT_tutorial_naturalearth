@@ -49,6 +49,8 @@ Export the output vector in GMT format.
 ```
 v.out.ogr input=ne_50m_ocean_blocks output=ne_50m_ocean_blocks.gmt format=OGR_GMT
 ```
+Exit programm.
 
+From my expereience, if GMT can not plot the polygon properly, it may because it doesn't like the points in "90" degree (the real reason is unknown to me). Try to open .gmt file in text editor and replace "90.0" to "89.999" or avioding plotting "90" in your GMT script. 
 
 
