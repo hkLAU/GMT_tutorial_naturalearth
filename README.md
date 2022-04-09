@@ -21,7 +21,7 @@ Where OGR_GMT is the desire format, ne_110m_rivers_lake_centerlines.gmt is the o
 
 ## 2.	Convert continues and complex geographic features (e.g. ice sheets, ocean) into GMT format vectors with GRASS GIS
 
-Open GRASS GIS with the command grass78. 
+Open GRASS GIS.
 ```
 grass78
 ```
@@ -29,5 +29,12 @@ Import vector data into a GRASS vector map with the command *v.in.ogr*.
 ```
 v.in.ogr input=packages/natural_earth_vector.sqlite layer=ne_50m_ocean output=ne_50m_ocean
 ```
-
+Set region of interest. You can view region info with *g.region -p*. 
+```
+g.region e=180e w=180w n=90n s=90s
+```
+Creates a vector map of a user-defined grid. We wuold like to create a 6x12 grid (30 arc-min resulotion) and name it grid30m. 
+```
+v.mkgrid map=grid30m grid=6,12
+```
 
